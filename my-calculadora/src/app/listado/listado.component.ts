@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-listado',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements OnInit {
+  @Input() idTecnico: string ="no id";
+  // @Input() idServico: string ;
+  // @Input() fechaInicio: string ;
+  // @Input() fechaFin: string ;
 
   constructor() { }
 

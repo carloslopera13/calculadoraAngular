@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {Tecnico} from './Tecnico'
 import { TecnicoService } from './tecnico.service';
 
@@ -8,16 +8,23 @@ import { TecnicoService } from './tecnico.service';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-  title="Reporte del servicio";
+  
+  title:string="Reporte del servicio";
+  tecnicos1: Tecnico = new Tecnico();
 
   tecnicos: Tecnico[];
 
   constructor(private tecnicoService:TecnicoService) { }
 
+
   ngOnInit(): void {
     this.tecnicoService.getAll().subscribe(
-     t => this.tecnicos=t
+     t => (this.tecnicos= t)
     )
+  }
+
+  guardar(): void{
+    console.log(this.tecnicos1)
   }
 
 }

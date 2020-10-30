@@ -8,13 +8,12 @@ import {Tecnico} from './Tecnico'
 })
 export class TecnicoService {
 
-  private url:string="http://localhost:8085/api/reportes"
+  private url:string="http://localhost:8085/api/reportes";
 
   constructor(private http: HttpClient) { }
 
   // Obtener estudiantes
   getAll():Observable<Tecnico[]>{
     return this.http.get<Tecnico[]>(this.url)
-
   }
 }

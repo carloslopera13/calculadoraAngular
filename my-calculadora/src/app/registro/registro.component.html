@@ -4,23 +4,57 @@
 <div class="container">
     <form>
         <div class="form-group">
-          <label for="formGroupExampleInput">Identificación del técnico</label>
-          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Id técnico">
+          <label >Identificación del técnico</label>
+          <input type="text" 
+          class="form-control" 
+          placeholder="Id técnico" 
+          ([ngModel])="tecnico1.idTecnico"
+          required>
         </div>
         <div class="form-group">
           <label >Identificación del servicio</label>
-          <input type="text" class="form-control" placeholder="Id servicio">
+          <input type="text" 
+          class="form-control" 
+          placeholder="Id servicio" 
+          ([ngModel])="tecnico1.idServico"
+          required>
         </div>
         <div class="form-group">
           <label >Fecha y hora inicio</label>
-          <input type="datetime-local" class="form-control">
+          <input type="datetime-local" 
+          class="form-control" 
+          ([ngModel])="tecnico1.fechaInicio"
+          required>
         </div>
         <div class="form-group">
           <label >Fecha y hora fin</label>
-          <input type="datetime-local" class="form-control">
+          <input type="datetime-local" 
+          class="form-control" 
+          ([ngModel])="tecnico1.fechaFin"
+          >
         </div>
-        <button type="button" class="btn btn-success">Guardar</button>
+        <button type="button" class="btn btn-success" (click)='guardar()'>Guardar</button>
       </form>
       
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id Técnico</th>
+            <th scope="col">Id Servicio</th>
+            <th scope="col">Fecha Inicio</th>
+            <th scope="col">Fecha Fin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tecnico of tecnicos">
+            <th scope="row">{{tecnico.idTecnico}}</th>
+            <td>{{tecnico.idServico}}</td>
+            <td>{{tecnico.fechaInicio}}</td>
+            <td>{{tecnico.fechaFin}}</td>
+          </tr>
+        
+        </tbody>
+      </table>
       
 </div>
