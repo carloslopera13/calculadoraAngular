@@ -9,11 +9,16 @@ import {Tecnico} from './Tecnico'
 export class TecnicoService {
 
   private url:string="http://localhost:8085/api/reportes";
+  private urlPost:string="http://localhost:8085/api/guardar"
 
   constructor(private http: HttpClient) { }
 
   // Obtener estudiantes
   getAll():Observable<Tecnico[]>{
     return this.http.get<Tecnico[]>(this.url)
+  }
+
+  guardarTecnico(tecnico:Tecnico):Observable<Tecnico>{
+    return this.http.post<Tecnico>(this.urlPost, tecnico)
   }
 }

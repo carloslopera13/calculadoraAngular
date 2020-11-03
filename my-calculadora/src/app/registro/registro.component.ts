@@ -10,9 +10,11 @@ import { TecnicoService } from './tecnico.service';
 export class RegistroComponent implements OnInit {
   
   title:string="Reporte del servicio";
-  tecnicos1: Tecnico = new Tecnico();
+  tecnico: Tecnico = new Tecnico();
 
   tecnicos: Tecnico[];
+
+  
 
   constructor(private tecnicoService:TecnicoService) { }
 
@@ -24,7 +26,7 @@ export class RegistroComponent implements OnInit {
   }
 
   guardar(): void{
-    console.log(this.tecnicos1)
+    console.log(this.tecnico)
   }
 
 }
