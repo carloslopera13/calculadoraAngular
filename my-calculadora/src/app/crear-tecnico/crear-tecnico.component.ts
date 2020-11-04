@@ -14,13 +14,20 @@ export class CrearTecnicoComponent implements OnInit {
   constructor(private tecnicoService:TecnicoService) { }
 
   ngOnInit(): void {
+
   }
 
   guardar(): void{
     console.log(this.tecnico)
+
+   if(this.tecnico.fechaInicio < this.tecnico.fechaFin ) {
     this.tecnicoService.guardarTecnico(this.tecnico).subscribe(
       t => (this.tecnico= t)
     )
+    alert('Técnico agregado correctamente')
+   }else{
+    alert('La Fecha Inicio debe ser menor a la fecha fin, volver a ingresar fechas')
+   }
   }
 
 }
