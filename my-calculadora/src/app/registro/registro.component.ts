@@ -8,7 +8,7 @@ import { TecnicoService } from './tecnico.service';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-
+  
   tecnicos: Tecnico[];
 
   constructor(private tecnicoService:TecnicoService) { }
