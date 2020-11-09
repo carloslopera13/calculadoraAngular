@@ -10,11 +10,8 @@ import {ReactiveFormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { RegistroComponent } from './registro/registro.component';
 import { CrearTecnicoComponent } from './crear-tecnico/crear-tecnico.component';
+import { AppRoutingModule } from './app-routing.module';
 
-const routes:Routes=[
-  {path:'registro', component: RegistroComponent},
-  {path:'crear', component: CrearTecnicoComponent},
-]
 
 @NgModule({
   declarations: [
@@ -27,7 +24,8 @@ const routes:Routes=[
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

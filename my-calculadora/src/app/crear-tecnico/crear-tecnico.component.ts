@@ -14,7 +14,7 @@ export class CrearTecnicoComponent implements OnInit {
   // tecnicos : FormGroup;
   tecnico: Tecnico = new Tecnico();
 
-  constructor(private tecnicoService:TecnicoService) 
+  constructor(private tecnicoService:TecnicoService, private router: Router) 
   {
     // this.tecnicos = new FormGroup (
     //   {
@@ -30,7 +30,7 @@ export class CrearTecnicoComponent implements OnInit {
     // this.tecnico = this.tecnicoService.guardar();
   }
 
-  guardar(): void{
+  guardar(){
     console.log(this.tecnico)
     if(this.tecnico.fechaInicio < this.tecnico.fechaFin ) {
         this.tecnicoService.guardarTecnico(this.tecnico).subscribe(
@@ -38,6 +38,7 @@ export class CrearTecnicoComponent implements OnInit {
           res => (this.tecnico= res)
         )
         alert('Técnico agregado correctamente')
+        this.router.navigate(['/registroTecnico'])
        }else{
         alert('La Fecha Inicio debe ser menor a la fecha fin, volver a ingresar fechas')
        }

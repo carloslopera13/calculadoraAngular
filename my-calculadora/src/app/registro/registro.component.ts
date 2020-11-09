@@ -13,10 +13,17 @@ export class RegistroComponent implements OnInit {
 
   constructor(private tecnicoService:TecnicoService) { }
 
-
   ngOnInit(): void {
+    this.listarTecnicos()
+  }
+
+  ngOnChanges(): void{
+    this.listarTecnicos()
+  }
+
+  listarTecnicos(): void{
     this.tecnicoService.getAll().subscribe(
-     t => (this.tecnicos= t)
+      data => (this.tecnicos= data)
     )
   }
 }
