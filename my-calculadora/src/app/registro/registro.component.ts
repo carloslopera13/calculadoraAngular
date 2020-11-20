@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {Tecnico} from './Tecnico'
 import { TecnicoService } from './tecnico.service';
 
@@ -8,10 +9,10 @@ import { TecnicoService } from './tecnico.service';
   styleUrls: ['./registro.component.css']
 })
 export class RegistroComponent implements OnInit {
-  
+  title:string="Reporte de técnicos";
   tecnicos: Tecnico[];
 
-  constructor(private tecnicoService:TecnicoService) { }
+  constructor(private tecnicoService:TecnicoService, private router: Router) { }
 
   ngOnInit(): void {
     this.listarTecnicos()
@@ -26,4 +27,12 @@ export class RegistroComponent implements OnInit {
       data => (this.tecnicos= data)
     )
   }
+
+  // eliminarTecnico(idTecnico : string): void{
+  //   this.tecnicoService.eliminarTecnico(idTecnico).subscribe(()=>{
+  //     this.listarTecnicos()
+  //   }
+      
+  //   )
+  // }
 }

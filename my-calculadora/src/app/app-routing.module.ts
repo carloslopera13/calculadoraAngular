@@ -5,21 +5,21 @@ import { RegistroComponent } from './registro/registro.component';
 
 
 const routes: Routes = [
+  {
+    path: 'registroTecnico',
+    component: RegistroComponent
+  },
     {
         path: 'crearTecnico',
         component: CrearTecnicoComponent
       },
       {
-        path: 'registroTecnico',
-        component: RegistroComponent
-      },
-      {
         path: ' ',
-        redirectTo:'crearTecnico'
+        redirectTo:'registroTecnico'
       },
       {
         path: '**',
-        redirectTo: 'crearTecnico'
+        redirectTo: 'registroTecnico'
       }
       
     ];

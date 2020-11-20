@@ -10,7 +10,7 @@ import {TecnicoService} from '../registro/tecnico.service';
   styleUrls: ['./crear-tecnico.component.css']
 })
 export class CrearTecnicoComponent implements OnInit {
-
+  title:string="Crear Técnico";
   // tecnicos : FormGroup;
   tecnico: Tecnico = new Tecnico();
 
@@ -34,7 +34,6 @@ export class CrearTecnicoComponent implements OnInit {
     console.log(this.tecnico)
     if(this.tecnico.fechaInicio < this.tecnico.fechaFin ) {
         this.tecnicoService.guardarTecnico(this.tecnico).subscribe(
-          // res => this.router.navigate(['/crear'])
           res => (this.tecnico= res)
         )
         alert('Técnico agregado correctamente')

@@ -8,8 +8,8 @@ import {Tecnico} from './Tecnico'
 })
 export class TecnicoService {
 
-  private url:string="http://localhost:8085/api/reportes";
-  private urlPost:string="http://localhost:8085/api/guardar"
+  private url:string="http://localhost:8080/api/tecnicos";
+  private urlPost:string="http://localhost:8080/api/tecnicos/crear"
 
   constructor(private http: HttpClient) { }
 
@@ -21,4 +21,10 @@ export class TecnicoService {
   guardarTecnico(tecnico:Tecnico):Observable<Tecnico>{
     return this.http.post<Tecnico>(this.urlPost, tecnico)
   }
+
+  // eliminarTecnico(idTecnico:string):Observable<any>{
+  //   return this.http.delete(this.url +'/'+ idTecnico)
+  // }
+
+
 }

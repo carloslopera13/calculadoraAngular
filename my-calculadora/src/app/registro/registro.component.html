@@ -1,20 +1,29 @@
+<div class="container">
+  <h1 class="text-center">{{title}}</h1>
+  </div>
+  <hr>
+<div class="container">
+  <button type="button" class="btn btn-success" [routerLink]="(['/crearTecnico'])">Crear técnico</button>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id Técnico</th>
+        <th scope="col">Id Servicio</th>
+        <th scope="col">Fecha Inicio</th>
+        <th scope="col">Fecha Fin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tecnico of tecnicos">
+        <th scope="row">{{tecnico.idTecnico}}</th>
+        <td>{{tecnico.idServico}}</td>
+        <td>{{tecnico.fechaInicio}}</td>
+        <td>{{tecnico.fechaFin}}</td>
+        <!-- <td><button type="button" class="btn btn-danger" (click)="eliminarTecnico(tecnico.idTecnico)">Eliminar</button></td> -->
+        
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">Id Técnico</th>
-            <th scope="col">Id Servicio</th>
-            <th scope="col">Fecha Inicio</th>
-            <th scope="col">Fecha Fin</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let tecnico of tecnicos">
-            <th scope="row">{{tecnico.idTecnico}}</th>
-            <td>{{tecnico.idServico}}</td>
-            <td>{{tecnico.fechaInicio}}</td>
-            <td>{{tecnico.fechaFin}}</td>
-          </tr>
-        </tbody>
-      </table>
 

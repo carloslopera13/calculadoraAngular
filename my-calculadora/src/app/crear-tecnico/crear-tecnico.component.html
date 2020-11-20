@@ -1,4 +1,9 @@
-<form  (ngSubmit)="guardar()">
+<div class="container">
+  <h1 class="text-center">{{title}}</h1>
+  </div>
+  <hr>
+<div class="container">
+  <form (ngSubmit)="guardar()">
     <div class="form-group">
       <label for="idTecnico">Identificación del técnico</label>
       <input type="text" 
@@ -38,6 +43,7 @@
       >
     </div>
     <button type="submit" role="button" class="btn btn-success btn-lg btn-block" >Guardar</button>
-    <!-- <button type="submit" role="button" class="btn btn-success btn-lg btn-block" [routerLink]="['/registroTecnico']">Ver Listado</button> -->
     <hr>
   </form>
+</div>
+
